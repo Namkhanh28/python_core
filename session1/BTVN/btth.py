@@ -1,3 +1,33 @@
+from random import randint
+# Tạo số ngẫu nhiên từ 100 đến 999
+ba_so_ngau_nhien = randint(100, 999)
+
 patient_name = input("Nhập tên của bệnh nhân")
 patient_gender=input("Nhặp giới tính của bệnh nhân")
+patient_birth_year=int(input("Nhập năm sinh của bệnh nhân"))
 patient_phone =input("Nhập số điện thoại bệnh nhân sử dựng")
+patient_email = input("Nhập email bệnh nhân")
+patient_sick = input("Nhập triệu chứng của bệnh")
+patient_price =float(input("nhập chi phí khám bệnh "))
+
+print(f"Mã bệnh nhân BN{patient_birth_year}{ba_so_ngau_nhien} ")
+print(f" Tên bệnh nhân : {patient_name}")
+print(f" Giới tính : {patient_gender}")
+print(f" Năm sinhbệnh nhân : {patient_birth_year}")
+print(f" Số điện thoai : {patient_phone}")
+print(f" Email bệnh nhân : {patient_email}")
+print(f" Triệu chứng : {patient_sick}")
+print(f" Viện phí: {patient_price} VND")
+
+print("=======THông tin bệnh nhân ========")
+print("\n===== Thông tin bệnh nhân =====")
+print(f"{'Thông tin':<20} | {'Giá trị'}")
+print("-" * 50)
+print(f"{'Mã bệnh nhân':<20} | {patient_id}")
+print(f"{'Tên bệnh nhân':<20} | {patient_name}")
+print(f"{'Giới tính':<20} | {patient_gender}")
+print(f"{'Năm sinh':<20} | {patient_birth_year}")
+print(f"{'Số điện thoại':<20} | {patient_phone}")
+print(f"{'Email':<20} | {patient_email}")
+print(f"{'Triệu chứng':<20} | {patient_sick}")
+print(f"{'Viện phí':<20} | {patient_price:.2f} VND")
