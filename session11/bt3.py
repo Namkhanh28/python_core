@@ -58,32 +58,35 @@ Nhập lựa chọn của bạn (1-4):  '''))
                 }
                 product_list.append(new_product)
         case '3':
-            found=False
-            input_id=input("Nhập mã sản phẩm: ")
+            input_id = input("Nhập mã sản phẩm cần cập nhật: ")
+            found = False
             for i in product_list:
-                if i.get('product_id').upper()==input_id.upper():
-                    print("MA bi trung")
-                    found=True
+                if i.get('product_id').upper() == input_id.upper():
+                    print("Đã tìm thấy sản phẩm, tiến hành cập nhật...")
+                    found = True
+                    input_name = input("Nhập tên sản phẩm mới: ")
+                    input_price = int(input("Nhập giá sản phẩm mới: "))
+                    input_quantity = int(input("Nhập số lượng sản phẩm mới: "))
+                if input_price < 0 or input_quantity < 0:
+                    print("Giá và số lượng không thể nhỏ hơn 0")
                     break
+                i['product_name'] = input_name
+                i['price'] = input_price
+                i['quantity'] = input_quantity
+                print(f"Cập nhật thành công: Mã {i['product_id']} | Tên sp: {i['product_name']} | Giá: {i['price']} | Số lượng: {i['quantity']}")
+                break
             if not found:
-                input_name=input("Nhap ten san pham :")
-                input_price=int(input("Nhap gia san pham: "))
-                input_quantity=int(input("Nhap so luong san pham: "))
-                if input_price<0 or input_quantity<0:
-                    print("Gia va so luong khong the it hon 0")
-                    continue    
-                new_product={
-                    "product_id": input_id,
-                    "product_name":input_name,
-                    "price": input_price,
-                    "quantity":input_quantity
-                }
-                product_list['product_id']=input_id
-                product_list['product_name']=input_name
-                product_list['price']=price
-                product_list['quantity']=input_quantity
-                print(f"{i+1}.Mã  : {value['product_id']} | Tên sp: {value['product_name']} | Giá: {value['price']} | Số lượng: {value['quantity']}")
-
+                print("Không tìm thấy sản phẩm với mã đã nhập")
+        case '4':
+            input_id = input("Nhập giá trị muốn xóa ")
+            input_id = input_id.upper().trip()
+            check = False
+            for i ,product in enumerate(product_list):
+                if(product['product_id'] == product_id): 
+                    product_list.pop(i)
+                    break
+            if not check:
+                print("không timg thấy sp")
         case '5':
             print("Thoát chương trình.Sau đó dừng chương trình.")
             break
